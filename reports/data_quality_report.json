@@ -1,0 +1,159 @@
+{
+  "dataset_name": "EMI_dataset.csv",
+  "total_rows": 404800,
+  "total_columns": 27,
+  "feature_count_breakdown": {
+    "total_columns_observed": 27,
+    "target_columns": [
+      "emi_eligibility",
+      "max_monthly_emi"
+    ],
+    "input_features_count": 25,
+    "discrepancy_note": "Prompt noted potential ambiguity between 22 and 25 input variables. Inspection of raw CSV confirms exactly 25 input features + 2 targets = 27 total columns."
+  },
+  "duplicate_columns": {},
+  "duplicate_rows": {
+    "count": 0,
+    "percentage": 0.0
+  },
+  "missing_values_summary": {
+    "total_missing_cells": 12041,
+    "columns_with_missing": [
+      {
+        "column": "education",
+        "missing_count": 2404,
+        "missing_percentage": 0.5938735177865613,
+        "dtype": "object"
+      },
+      {
+        "column": "monthly_rent",
+        "missing_count": 2426,
+        "missing_percentage": 0.5993083003952568,
+        "dtype": "float64"
+      },
+      {
+        "column": "credit_score",
+        "missing_count": 2420,
+        "missing_percentage": 0.5978260869565217,
+        "dtype": "float64"
+      },
+      {
+        "column": "bank_balance",
+        "missing_count": 2440,
+        "missing_percentage": 0.6027667984189723,
+        "dtype": "float64"
+      },
+      {
+        "column": "emergency_fund",
+        "missing_count": 2351,
+        "missing_percentage": 0.5807806324110671,
+        "dtype": "float64"
+      }
+    ]
+  },
+  "data_corrections_recorded": {
+    "age": "3 values with multi-dot formatting ('58.0.0', '38.0.0', '32.0.0') sanitized to integer/float.",
+    "monthly_salary": "1,993 values with multi-dot formatting (e.g. '64300.0.0') sanitized to valid decimal float.",
+    "bank_balance": "1,952 values with multi-dot formatting (e.g. '270700.0.0') sanitized to valid decimal float."
+  },
+  "infinite_values": {},
+  "constant_columns": [],
+  "near_constant_columns": [],
+  "classification_target": {
+    "name": "emi_eligibility",
+    "distribution": {
+      "Not_Eligible": 312868,
+      "Eligible": 74444,
+      "High_Risk": 17488
+    },
+    "invalid_values": []
+  },
+  "regression_target": {
+    "name": "max_monthly_emi",
+    "statistics": {
+      "min": 500.0,
+      "max": 91040.4,
+      "mean": 6763.602156101779,
+      "median": 4211.2,
+      "std": 7741.263317050573,
+      "negative_values_count": 0,
+      "zero_values_count": 0
+    }
+  },
+  "range_anomalies_flagged": {
+    "credit_score": {
+      "expected_range": [
+        300.0,
+        900.0
+      ],
+      "below_min_count": 1566,
+      "above_max_count": 3210,
+      "min_observed": 0.0,
+      "max_observed": 1200.0
+    }
+  },
+  "categorical_anomalies": {
+    "gender": {
+      "valid_options": [
+        "Male",
+        "Female",
+        "Other",
+        "Non-binary"
+      ],
+      "unexpected_observed": [
+        "female",
+        "male",
+        "M",
+        "MALE",
+        "F",
+        "FEMALE"
+      ]
+    },
+    "employment_type": {
+      "valid_options": [
+        "Salaried",
+        "Self-Employed",
+        "Business",
+        "Private",
+        "Government",
+        "Freelancer"
+      ],
+      "unexpected_observed": [
+        "Self-employed"
+      ]
+    },
+    "company_type": {
+      "valid_options": [
+        "MNC",
+        "Startup",
+        "Mid-size",
+        "Corporate",
+        "Public",
+        "Small Business",
+        "Government"
+      ],
+      "unexpected_observed": [
+        "Large Indian",
+        "Small"
+      ]
+    },
+    "emi_scenario": {
+      "valid_options": [
+        "Personal Loan EMI",
+        "Home Loan EMI",
+        "Vehicle EMI",
+        "Education EMI",
+        "E-commerce Shopping EMI",
+        "Medical Emergency EMI",
+        "Business Equipment EMI"
+      ],
+      "unexpected_observed": [
+        "Home Appliances EMI"
+      ]
+    }
+  },
+  "potential_identifier_columns": [],
+  "target_leakage_audit": [
+    "Target columns present together: 'emi_eligibility' and 'max_monthly_emi'. Must ensure mutual exclusion during independent classification and regression training."
+  ]
+}

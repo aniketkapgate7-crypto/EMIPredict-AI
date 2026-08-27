@@ -1,0 +1,97 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# C extensions
+*.so
+
+# Distribution / packaging
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+share/python-wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# Virtual Environments
+.venv/
+venv/
+ENV/
+env/
+env.bak/
+venv.bak/
+
+# Environment Variables & Secrets
+.env
+.env.local
+.env.*.local
+
+# Unit test / coverage / linter caches
+.pytest_cache/
+.coverage
+.coverage.*
+.cache
+nosetests.xml
+coverage.xml
+*.cover
+*.py,cover
+.hypothesis/
+.ruff_cache/
+
+# Jupyter Notebook checkpoints
+.ipynb_checkpoints
+*/.ipynb_checkpoints/*
+
+# IDE and Editor files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+
+# MLflow Tracking & Artifacts
+mlruns/
+mlartifacts/
+mlflow.db
+mlflow.db-*
+
+# SQLite and Local Databases
+database/*.db
+database/*.sqlite
+*.sqlite3
+*.db
+*.db-journal
+
+# Datasets (Track sample data, ignore large raw/processed files)
+data/raw/*.csv
+data/raw/*.parquet
+data/processed/*.csv
+data/processed/*.parquet
+!data/raw/.gitkeep
+!data/processed/.gitkeep
+!data/sample/.gitkeep
+!data/sample/emi_sample.csv
+
+# Model Metadata
+!models/.gitkeep
+!models/model_metadata.json
+!models/input_schema.json
+
+# Temporary & Log files
+*.log
+temp/
+tmp/

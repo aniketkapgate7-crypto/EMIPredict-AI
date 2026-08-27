@@ -1,0 +1,30 @@
+{
+  "model_name": "XGBoost",
+  "task": "regression",
+  "target_column": "max_monthly_emi",
+  "primary_metric": "mae",
+  "validation_metrics": {
+    "model_name": "XGBoost",
+    "mae": 274.78,
+    "rmse": 777.24,
+    "r2": 0.99,
+    "mape": 0.0899,
+    "residual_mean": -6.82,
+    "residual_std": 777.21,
+    "actual_vs_predicted_plot": "D:\\Internship-1Aug\\EMIPredict-AI\\reports\\figures\\actual_vs_predicted_xgboost.png",
+    "residual_plot": "D:\\Internship-1Aug\\EMIPredict-AI\\reports\\figures\\residuals_xgboost.png"
+  },
+  "test_metrics": {
+    "model_name": "XGBoost (Test Set)",
+    "mae": 269.73,
+    "rmse": 750.05,
+    "r2": 0.9906,
+    "mape": 0.086,
+    "residual_mean": -10.07,
+    "residual_std": 749.99,
+    "actual_vs_predicted_plot": "D:\\Internship-1Aug\\EMIPredict-AI\\reports\\figures\\actual_vs_predicted_xgboost_(test_set).png",
+    "residual_plot": "D:\\Internship-1Aug\\EMIPredict-AI\\reports\\figures\\residuals_xgboost_(test_set).png"
+  },
+  "presentation_lower_bound": 0.0,
+  "saved_path": "D:\\Internship-1Aug\\EMIPredict-AI\\models\\max_emi_pipeline.joblib"
+}

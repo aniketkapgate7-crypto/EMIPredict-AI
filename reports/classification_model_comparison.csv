@@ -1,0 +1,5 @@
+Model,Macro F1,Weighted F1,Accuracy,Macro Precision,Macro Recall,ROC-AUC (OvR),Training Time (s)
+XGBoost,0.8168,0.9604,0.9657,0.9037,0.7824,0.992,12.31
+Decision Tree,0.772,0.9279,0.9108,0.7535,0.8699,0.9641,7.23
+Random Forest,0.7543,0.9162,0.892,0.7463,0.8759,0.9809,15.92
+Logistic Regression,0.6709,0.8643,0.821,0.6788,0.785,0.9471,9.26

@@ -1,0 +1,128 @@
+{
+  "audit_metadata": {
+    "timestamp": "2026-08-28T02:31:00+05:30",
+    "project_name": "EMIPredict AI",
+    "auditor": "Independent Senior AI/ML & MLOps Auditor",
+    "workspace_root": "D:/Internship-1Aug/EMIPredict-AI"
+  },
+  "environment": {
+    "python_version": "3.11.9 (tags/v3.11.9:de54cf5, Apr  2 2024, 10:12:12) [MSC v.1938 64 bit (AMD64)]",
+    "os_platform": "Windows-10-10.0.26200-SP0",
+    "pip_check_status": "No broken requirements found (exit code 0)",
+    "git_branch": "master",
+    "git_status": "Repository initialized, initial commit pending",
+    "compilation_status": "Clean (exit code 0)",
+    "ruff_status": "All checks passed! (exit code 0)",
+    "pytest_status": "20 passed in 7.02s (exit code 0)"
+  },
+  "dataset": {
+    "raw_csv_path": "data/raw/EMI_dataset.csv",
+    "file_size_bytes": 75420672,
+    "file_size_mb": 71.93,
+    "total_rows": 404800,
+    "total_columns": 27,
+    "total_missing_cells": 12027,
+    "duplicate_rows": 0,
+    "classification_target": "emi_eligibility",
+    "classification_distribution": {
+      "Not_Eligible": 312868,
+      "Eligible": 74444,
+      "High_Risk": 17488
+    },
+    "classification_percentage": {
+      "Not_Eligible": 77.29,
+      "Eligible": 18.39,
+      "High_Risk": 4.32
+    },
+    "regression_target": "max_monthly_emi",
+    "regression_stats": {
+      "min": 500.0,
+      "max": 91040.4,
+      "mean": 6763.6,
+      "median": 4211.2,
+      "std": 7741.26,
+      "negative_count": 0,
+      "zero_count": 0
+    },
+    "sensitive_demographic_attributes": ["gender", "marital_status"]
+  },
+  "data_splits": {
+    "strategy": "Stratified 70/15/15 on emi_eligibility",
+    "random_state": 42,
+    "train_rows": 283360,
+    "train_percentage": 70.0,
+    "val_rows": 60720,
+    "val_percentage": 15.0,
+    "test_rows": 60720,
+    "test_percentage": 15.0,
+    "total_split_rows": 404800,
+    "target_leakage_detected": false
+  },
+  "feature_engineering_audit": {
+    "features_count": 13,
+    "dti_definition": "current_monthly_debt_payments / gross_monthly_income",
+    "expense_ratio_definition": "total_monthly_living_expenses / gross_monthly_income",
+    "obligation_ratio_definition": "(total_monthly_living_expenses + current_monthly_debt_payments) / gross_monthly_income",
+    "principal_burden_definition": "(requested_amount / requested_tenure) / gross_monthly_income",
+    "principal_monthly_estimate_definition": "requested_amount / max(requested_tenure, 1.0)",
+    "qa_case_verification": {
+      "monthly_salary": 65000.0,
+      "current_emi_amount": 0.0,
+      "requested_amount": 300000.0,
+      "requested_tenure": 24,
+      "monthly_living_expenses": 38500.0,
+      "current_debt_to_income_ratio": 0.0,
+      "expense_to_income_ratio": 0.5923,
+      "obligation_to_income_ratio": 0.5923,
+      "requested_principal_per_month": 12500.0,
+      "proposed_principal_burden_ratio": 0.1923,
+      "disposable_income": 26500.0
+    },
+    "retraining_required": false
+  },
+  "model_artifacts": {
+    "eligibility_pipeline.joblib": {
+      "size_bytes": 383628,
+      "sha256": "93da0e172a76769902501c71a0de8a10cc10fcf112cf63fd49bd82596b355e7f",
+      "model_type": "XGBClassifier",
+      "champion_metric": "Macro F1 = 0.8207 (Test), 0.8168 (Val)"
+    },
+    "max_emi_pipeline.joblib": {
+      "size_bytes": 125541,
+      "sha256": "5e13085580afae5fc3b9a664ad136edac55a777b7f946e63a97bcd1b9ad9ea8f",
+      "model_type": "XGBRegressor",
+      "champion_metric": "MAE = INR 269.73 (Test), INR 274.78 (Val)"
+    }
+  },
+  "mlflow_audit": {
+    "tracking_uri": "sqlite:///mlflow.db",
+    "database_size_bytes": 974848,
+    "experiments_count": 3,
+    "total_runs_count": 26,
+    "total_logged_params": 100,
+    "total_logged_metrics": 120
+  },
+  "database_crud": {
+    "engine": "SQLAlchemy ORM (SQLite / PostgreSQL compatible)",
+    "lifecycle_test": {
+      "create": "VERIFIED_WORKING",
+      "read": "VERIFIED_WORKING",
+      "list": "VERIFIED_WORKING",
+      "update": "VERIFIED_WORKING",
+      "delete": "VERIFIED_WORKING"
+    }
+  },
+  "security_scan": {
+    "hardcoded_secrets_found": 0,
+    "pii_detected": 0,
+    "git_large_files_over_100mb": 0,
+    "files_over_50mb": ["data/raw/EMI_dataset.csv (71.93 MB, ignored by .gitignore)"],
+    "gitignore_protection": "Comprehensive (.env, .venv, raw data, processed parquets, *.db ignored)"
+  },
+  "scoring": {
+    "implementation_present_percent": 100.0,
+    "verified_working_percent": 98.8,
+    "overall_deployment_ready_percent": 97.5,
+    "weighted_score": 98.8
+  }
+}

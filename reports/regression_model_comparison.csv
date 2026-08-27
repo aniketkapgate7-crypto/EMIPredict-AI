@@ -1,0 +1,6 @@
+Model,MAE (INR),RMSE (INR),R2 Score,MAPE,Training Time (s)
+XGBoost,274.78,777.24,0.99,0.0899,5.72
+Random Forest,347.47,979.56,0.9841,0.0712,114.19
+Decision Tree,425.37,1158.2,0.9778,0.0751,7.25
+Ridge Regression,2605.11,3884.24,0.7506,1.2565,1.57
+Linear Regression,2605.11,3884.24,0.7506,1.2565,2.67

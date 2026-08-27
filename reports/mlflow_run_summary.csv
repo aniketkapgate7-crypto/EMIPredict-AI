@@ -1,0 +1,27 @@
+experiment_name,run_id,run_name,status,start_time,param_model_type,param_train_samples,param_val_samples,param_training_duration_seconds,metric_val_mae,metric_val_rmse,metric_val_r2,metric_val_mape,metric_val_accuracy,metric_val_macro_precision,metric_val_macro_recall,metric_val_macro_f1,metric_val_weighted_f1,metric_val_roc_auc_ovr
+EMIPredict_Regression,fd55033ce04c4e8caa593437315de840,XGBoost,FINISHED,2026-08-27 18:09:09,XGBoost,283360,60720,5.72,274.78,777.24,0.99,0.0899,,,,,,
+EMIPredict_Regression,57ff66320f7c41b8aad6905f5d8f06c9,Random Forest,FINISHED,2026-08-27 18:07:14,Random Forest,283360,60720,114.19,347.47,979.56,0.9841,0.0712,,,,,,
+EMIPredict_Regression,91af90ba797940fcbac904535aae97a7,Decision Tree,FINISHED,2026-08-27 18:07:06,Decision Tree,283360,60720,7.25,425.37,1158.2,0.9778,0.0751,,,,,,
+EMIPredict_Regression,fbe18b6b1a3d4bb58eb980046c12b9e0,Ridge Regression,FINISHED,2026-08-27 18:07:04,Ridge Regression,283360,60720,1.57,2605.11,3884.24,0.7506,1.2565,,,,,,
+EMIPredict_Regression,6225ebb58db342a3a2e1cbed7e4ec0cd,Linear Regression,FINISHED,2026-08-27 18:07:00,Linear Regression,283360,60720,2.67,2605.11,3884.24,0.7506,1.2565,,,,,,
+EMIPredict_Regression,0ffcb9539bc3419b8dad249252a8e714,XGBoost,FINISHED,2026-08-27 14:09:00,XGBoost,283360,60720,5.61,272.65,766.86,0.9903,0.0878,,,,,,
+EMIPredict_Regression,9ce99ef9ac0348c28b8f09f9f42a732a,Random Forest,FINISHED,2026-08-27 14:07:13,Random Forest,283360,60720,105.9,346.68,978.41,0.9842,0.0709,,,,,,
+EMIPredict_Regression,a02d756d742942be87942bfee661bc37,Decision Tree,FINISHED,2026-08-27 14:07:05,Decision Tree,283360,60720,7.33,424.68,1156.13,0.9779,0.0747,,,,,,
+EMIPredict_Regression,4c54b9e120714d74b0052b51d3438b78,Ridge Regression,FINISHED,2026-08-27 14:07:02,Ridge Regression,283360,60720,1.86,2605.59,3884.53,0.7506,1.2565,,,,,,
+EMIPredict_Regression,1c010716d2a94643b31b91fd60ac7111,Linear Regression,FINISHED,2026-08-27 14:06:58,Linear Regression,283360,60720,3.23,2605.58,3884.53,0.7506,1.2565,,,,,,
+EMIPredict_Regression,9effedc27b0048d08006bd45e57949e3,XGBoost,FINISHED,2026-08-27 14:06:16,XGBoost,283360,60720,6.78,272.65,766.86,0.9903,0.0878,,,,,,
+EMIPredict_Regression,2b61d6cad0704657aa674b53ca6307f3,Random Forest,FINISHED,2026-08-27 14:04:22,Random Forest,283360,60720,112.24,346.68,978.41,0.9842,0.0709,,,,,,
+EMIPredict_Regression,1cec92e268c8432faa496615837a0269,Decision Tree,FINISHED,2026-08-27 14:04:15,Decision Tree,283360,60720,6.48,424.68,1156.13,0.9779,0.0747,,,,,,
+EMIPredict_Regression,72bbeaf4d0c648fea8d24d634f543f34,Ridge Regression,FINISHED,2026-08-27 14:04:13,Ridge Regression,283360,60720,1.56,2605.59,3884.53,0.7506,1.2565,,,,,,
+EMIPredict_Regression,2f778bfe478d4659b7f2895a5c6695e2,Linear Regression,FINISHED,2026-08-27 14:04:10,Linear Regression,283360,60720,2.9,2605.58,3884.53,0.7506,1.2565,,,,,,
+EMIPredict_Classification,cf689e64e2d748f5ac096cdc363ce50e,XGBoost,FINISHED,2026-08-27 18:06:32,XGBoost,283360,60720,12.31,,,,,0.9657,0.9037,0.7824,0.8168,0.9604,0.992
+EMIPredict_Classification,6d2f1a271b9a44faa5e8deed42960986,Random Forest,FINISHED,2026-08-27 18:06:15,Random Forest,283360,60720,15.92,,,,,0.892,0.7463,0.8759,0.7543,0.9162,0.9809
+EMIPredict_Classification,dd3db984763e49f4ae5820858cfab4fa,Decision Tree,FINISHED,2026-08-27 18:06:06,Decision Tree,283360,60720,7.23,,,,,0.9108,0.7535,0.8699,0.772,0.9279,0.9641
+EMIPredict_Classification,2641b852d58243a999aeb17935e75d9c,Logistic Regression,FINISHED,2026-08-27 18:05:55,Logistic Regression,283360,60720,9.26,,,,,0.821,0.6788,0.785,0.6709,0.8643,0.9471
+EMIPredict_Classification,badaa3c78b7d49da8fb20853f20d15dc,XGBoost,FINISHED,2026-08-27 14:01:49,XGBoost,283360,60720,12.83,,,,,0.9627,0.8991,0.7543,0.7867,0.9551,0.9914
+EMIPredict_Classification,f5308066188548dca8e0be0644d6659c,Random Forest,FINISHED,2026-08-27 14:01:31,Random Forest,283360,60720,15.14,,,,,0.8791,0.7365,0.8638,0.7386,0.9075,0.9779
+EMIPredict_Classification,fdee7beec88a461084eac032dd5d01ea,Decision Tree,FINISHED,2026-08-27 14:01:23,Decision Tree,283360,60720,7.33,,,,,0.9051,0.7506,0.87,0.7659,0.9243,0.9596
+EMIPredict_Classification,c34be22f0bae4a2883736e474b23585a,Logistic Regression,FINISHED,2026-08-27 14:01:14,Logistic Regression,283360,60720,7.52,,,,,0.8187,0.678,0.781,0.668,0.8629,0.9455
+EMIPredict_Classification,b05aaa5e2f6c45a1b7380a06ac4c8351,Random Forest,FAILED,2026-08-25 19:33:50,,,,,,,,,,,,,,
+EMIPredict_Classification,b56f4488edb142eaa215db61d3a85d51,Decision Tree,FINISHED,2026-08-25 19:33:16,Decision Tree,283360,60720,28.16,,,,,0.9051,0.7506,0.87,0.7659,0.9243,0.9596
+EMIPredict_Classification,41ecbf23915d4bdd8ce12f45787f8159,Logistic Regression,FINISHED,2026-08-25 19:32:51,Logistic Regression,283360,60720,17.34,,,,,0.8187,0.678,0.781,0.668,0.8629,0.9455

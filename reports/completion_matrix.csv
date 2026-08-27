@@ -1,0 +1,24 @@
+category,requirement,weight,status,evidence,severity,missing_work,score_awarded
+Workspace and environment,Python 3.11 environment and clean dependency tree,2.5,VERIFIED_COMPLETE,"Python 3.11.9, pip check clean with 0 broken packages",INFO,None,2.5
+Workspace and environment,Clean compilation and Git configuration,2.5,PARTIAL,"compileall exit code 0, Git initialized on master; initial commit untracked",LOW,Run initial git commit before pushing to remote,2.3
+Dataset validation and splitting,Dataset integrity and schema validation,5.0,VERIFIED_COMPLETE,"404800 rows, 27 columns, 12027 nulls across 5 cols, 0 duplicates",INFO,None,5.0
+Dataset validation and splitting,Stratified 70/15/15 train/val/test split,5.0,VERIFIED_COMPLETE,"283360 train, 60720 val, 60720 test stratified on emi_eligibility",INFO,None,5.0
+EDA and reports,Exploratory data analysis & 25 diagnostic figures,3.5,VERIFIED_COMPLETE,"25 PNG figures generated across distributions, correlations, residuals",INFO,None,3.5
+EDA and reports,EDA reports & representative sample generation,3.5,VERIFIED_COMPLETE,"eda_summary.md, business_insights.md, 5000-row sample created",INFO,None,3.5
+Feature engineering leakage and fairness,13 domain financial features with distinct DTI vs Expense Ratio,6.0,VERIFIED_COMPLETE,"build_features.py calculates distinct DTI, Expense Ratio, Principal Burden",INFO,None,6.0
+Feature engineering leakage and fairness,Leakage prevention and sensitive demographic feature exclusion,4.0,VERIFIED_COMPLETE,"gender and marital_status excluded; targets isolated from transformers",INFO,None,4.0
+Classification modelling,Multiclass credit eligibility model training,6.0,VERIFIED_COMPLETE,"4 candidate models trained (Logistic Regression, DT, RF, XGBoost)",INFO,None,6.0
+Classification modelling,Champion model selection on Macro F1,6.0,VERIFIED_COMPLETE,"XGBoost champion selected (Macro F1 = 0.8207 on Test, 0.8168 on Val)",INFO,None,6.0
+Regression modelling,Max monthly EMI affordability regression,6.0,VERIFIED_COMPLETE,"5 candidate models trained (Linear, Ridge, DT, RF, XGBoost)",INFO,None,6.0
+Regression modelling,Champion model selection on MAE & non-negativity constraint,6.0,VERIFIED_COMPLETE,"XGBoost champion selected (MAE = INR 269.73 on Test, INR 274.78 on Val)",INFO,None,6.0
+MLflow and model artifacts,Centralized MLflow tracking & experiment lineage,4.0,VERIFIED_COMPLETE,"mlflow.db with 3 experiments, 26 runs, 100 params, 120 metrics",INFO,None,4.0
+MLflow and model artifacts,Production pipeline joblib serialization & SHA-256 integrity,4.0,VERIFIED_COMPLETE,"eligibility_pipeline.joblib (383KB) & max_emi_pipeline.joblib (125KB) verified",INFO,None,4.0
+Prediction service,End-to-end inference service & input sanitization,3.0,VERIFIED_COMPLETE,"predict_applicant_risk verified across low/mod/high burden scenarios",INFO,None,3.0
+Prediction service,Configurable academic benchmark diagnostics & principal-only labeling,3.0,VERIFIED_COMPLETE,"Diagnostics use academic benchmarks (<=40% DTI, <=40% burden, <=70% obligations)",INFO,None,3.0
+Streamlit application,Multi-page UI navigation and interactive pages,6.0,VERIFIED_COMPLETE,"Root streamlit_app.py + 6 pages verified with zero import errors",INFO,None,6.0
+Streamlit application,Prediction calculator, charts, and lightweight sample loading,6.0,PARTIAL,"Full UI functional; actual public cloud URL is external pending",LOW,Deploy to Streamlit Cloud via GitHub repository link,5.5
+Database CRUD,SQLAlchemy ORM models and CRUD lifecycle operations,5.0,VERIFIED_COMPLETE,"Create, Read, List, Update, Delete verified in memory & SQLite",INFO,None,5.0
+Testing security and code quality,Automated Pytest test suite & linter compliance,5.0,VERIFIED_COMPLETE,"20 passed tests in 7.02s; Ruff linter clean with 0 errors",INFO,None,5.0
+Testing security and code quality,Security audit, credential redaction & .gitignore rules,3.0,VERIFIED_COMPLETE,"Zero leaked secrets; .env, .venv, raw data, parquets, dbs ignored",INFO,None,3.0
+Documentation and deployment readiness,Comprehensive documentation, README, and model card,3.0,VERIFIED_COMPLETE,"README, model_card.md, model_selection_report.md complete",INFO,None,3.0
+Documentation and deployment readiness,GitHub Actions CI workflow & deployment config,2.0,PARTIAL,".github/workflows/ci.yml created; push to remote repository pending",LOW,Push repository to remote GitHub host,1.5

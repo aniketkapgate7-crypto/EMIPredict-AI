@@ -1,0 +1,25 @@
+# Core Data Science & ML
+pandas>=2.0.0
+numpy>=1.24.0
+scikit-learn>=1.3.0
+xgboost>=2.0.0
+joblib>=1.3.0
+scipy>=1.11.0
+
+# Experiment Tracking & MLOps
+mlflow>=2.10.0
+
+# Web Application & Visualization
+streamlit>=1.30.0
+plotly>=5.18.0
+matplotlib>=3.8.0
+seaborn>=0.13.0
+
+# Database & Config
+SQLAlchemy>=2.0.0
+PyYAML>=6.0.0
+python-dotenv>=1.0.0
+
+# Testing & Quality Assurance
+pytest>=8.0.0
+ruff>=0.3.0

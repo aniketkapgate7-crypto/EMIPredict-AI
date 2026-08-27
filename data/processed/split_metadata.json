@@ -1,0 +1,12 @@
+{
+  "total_records": 404800,
+  "train_records": 283360,
+  "train_percentage": 70.0,
+  "val_records": 60720,
+  "val_percentage": 15.0,
+  "test_records": 60720,
+  "test_percentage": 15.0,
+  "stratified_by": "emi_eligibility",
+  "random_state": 42,
+  "sample_records": 5000
+}

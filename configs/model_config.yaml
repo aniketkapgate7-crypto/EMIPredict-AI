@@ -1,0 +1,91 @@
+# EMIPredict AI Configuration
+
+project:
+  name: "EMIPredict AI"
+  version: "1.0.0"
+  description: "Intelligent Financial Risk Assessment & EMI Affordability Platform"
+  random_state: 42
+
+paths:
+  raw_data: "data/raw/EMI_dataset.csv"
+  processed_train: "data/processed/train.parquet"
+  processed_val: "data/processed/val.parquet"
+  processed_test: "data/processed/test.parquet"
+  sample_data: "data/sample/emi_sample.csv"
+  models_dir: "models"
+  reports_dir: "reports"
+  figures_dir: "reports/figures"
+  database_url: "sqlite:///database/applicants.db"
+
+targets:
+  classification: "emi_eligibility"
+  regression: "max_monthly_emi"
+  classes:
+    - "Eligible"
+    - "High_Risk"
+    - "Not_Eligible"
+
+data_schema:
+  total_columns_observed: 27
+  input_features_count: 25
+  sensitive_attributes:
+    - "gender"
+    - "marital_status"
+  
+  raw_numerical_features:
+    - "age"
+    - "monthly_salary"
+    - "years_of_employment"
+    - "monthly_rent"
+    - "family_size"
+    - "dependents"
+    - "school_fees"
+    - "college_fees"
+    - "travel_expenses"
+    - "groceries_utilities"
+    - "other_monthly_expenses"
+    - "current_emi_amount"
+    - "credit_score"
+    - "bank_balance"
+    - "emergency_fund"
+    - "requested_amount"
+    - "requested_tenure"
+
+  raw_categorical_features:
+    - "education"
+    - "employment_type"
+    - "company_type"
+    - "house_type"
+    - "existing_loans"
+    - "emi_scenario"
+
+  engineered_numerical_features:
+    - "total_monthly_expenses"
+    - "total_monthly_obligations"
+    - "disposable_income"
+    - "debt_to_income_ratio"
+    - "expense_to_income_ratio"
+    - "obligation_to_income_ratio"
+    - "proposed_principal_burden_ratio"
+    - "savings_to_income_ratio"
+    - "emergency_fund_months"
+    - "requested_principal_per_month"
+    - "requested_amount_to_income_ratio"
+    - "dependents_ratio"
+    - "employment_stability_score"
+
+split:
+  train_size: 0.70
+  val_size: 0.15
+  test_size: 0.15
+  stratify: true
+
+compute:
+  n_jobs: 2
+  sample_for_tuning: 50000
+  cv_folds: 3
+
+mlflow:
+  experiment_classification: "EMIPredict_Classification"
+  experiment_regression: "EMIPredict_Regression"
+  tracking_uri: "sqlite:///mlflow.db"

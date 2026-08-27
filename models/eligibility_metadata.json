@@ -1,0 +1,138 @@
+{
+  "model_name": "XGBoost",
+  "task": "multiclass_classification",
+  "target_column": "emi_eligibility",
+  "classes": [
+    "Eligible",
+    "High_Risk",
+    "Not_Eligible"
+  ],
+  "primary_metric": "macro_f1",
+  "validation_metrics": {
+    "model_name": "XGBoost",
+    "accuracy": 0.9657,
+    "macro_precision": 0.9037,
+    "macro_recall": 0.7824,
+    "macro_f1": 0.8168,
+    "weighted_f1": 0.9604,
+    "roc_auc_ovr": 0.992,
+    "confusion_matrix": [
+      [
+        10907,
+        137,
+        122
+      ],
+      [
+        755,
+        982,
+        886
+      ],
+      [
+        77,
+        104,
+        46750
+      ]
+    ],
+    "classification_report": {
+      "Eligible": {
+        "precision": 0.929125138427464,
+        "recall": 0.976804585348379,
+        "f1-score": 0.9523684784981445,
+        "support": 11166.0
+      },
+      "High_Risk": {
+        "precision": 0.802943581357318,
+        "recall": 0.37438048036599314,
+        "f1-score": 0.5106604264170567,
+        "support": 2623.0
+      },
+      "Not_Eligible": {
+        "precision": 0.9788935885087315,
+        "recall": 0.99614327416846,
+        "f1-score": 0.9874431032115663,
+        "support": 46931.0
+      },
+      "accuracy": 0.9657279314888011,
+      "macro avg": {
+        "precision": 0.9036541027645045,
+        "recall": 0.782442779960944,
+        "f1-score": 0.8168240027089224,
+        "support": 60720.0
+      },
+      "weighted avg": {
+        "precision": 0.9621407660060043,
+        "recall": 0.9657279314888011,
+        "f1-score": 0.9603969203923624,
+        "support": 60720.0
+      }
+    },
+    "confusion_matrix_plot": "D:\\Internship-1Aug\\EMIPredict-AI\\reports\\figures\\confusion_matrix_xgboost.png"
+  },
+  "test_metrics": {
+    "model_name": "XGBoost (Test Set)",
+    "accuracy": 0.9663,
+    "macro_precision": 0.9111,
+    "macro_recall": 0.785,
+    "macro_f1": 0.8207,
+    "weighted_f1": 0.9611,
+    "roc_auc_ovr": 0.9921,
+    "confusion_matrix": [
+      [
+        10908,
+        138,
+        121
+      ],
+      [
+        735,
+        1001,
+        887
+      ],
+      [
+        88,
+        75,
+        46767
+      ]
+    ],
+    "classification_report": {
+      "Eligible": {
+        "precision": 0.9298440030687921,
+        "recall": 0.9768066624876869,
+        "f1-score": 0.9527469648004192,
+        "support": 11167.0
+      },
+      "High_Risk": {
+        "precision": 0.8245469522240527,
+        "recall": 0.3816240945482272,
+        "f1-score": 0.5217617930675007,
+        "support": 2623.0
+      },
+      "Not_Eligible": {
+        "precision": 0.9789010989010989,
+        "recall": 0.9965267419561048,
+        "f1-score": 0.9876352885275329,
+        "support": 46930.0
+      },
+      "accuracy": 0.9663372859025033,
+      "macro avg": {
+        "precision": 0.9110973513979812,
+        "recall": 0.7849858329973397,
+        "f1-score": 0.8207146821318175,
+        "support": 60720.0
+      },
+      "weighted avg": {
+        "precision": 0.9632111859252547,
+        "recall": 0.9663372859025033,
+        "f1-score": 0.9610940485793718,
+        "support": 60720.0
+      }
+    },
+    "confusion_matrix_plot": "D:\\Internship-1Aug\\EMIPredict-AI\\reports\\figures\\confusion_matrix_xgboost_(test_set).png"
+  },
+  "uses_label_encoding": true,
+  "class_mapping": {
+    "Eligible": 0,
+    "High_Risk": 1,
+    "Not_Eligible": 2
+  },
+  "saved_path": "D:\\Internship-1Aug\\EMIPredict-AI\\models\\eligibility_pipeline.joblib"
+}

@@ -1,0 +1,207 @@
+{
+  "title": "EMIPredict AI Applicant Input Schema",
+  "description": "Input schema specification for EMI eligibility classification and max EMI regression.",
+  "type": "object",
+  "required_features": [
+    "age",
+    "monthly_salary",
+    "years_of_employment",
+    "monthly_rent",
+    "family_size",
+    "dependents",
+    "school_fees",
+    "college_fees",
+    "travel_expenses",
+    "groceries_utilities",
+    "other_monthly_expenses",
+    "current_emi_amount",
+    "credit_score",
+    "bank_balance",
+    "emergency_fund",
+    "requested_amount",
+    "requested_tenure",
+    "education",
+    "employment_type",
+    "company_type",
+    "house_type",
+    "existing_loans",
+    "emi_scenario"
+  ],
+  "sensitive_attributes_audited": [
+    "gender",
+    "marital_status"
+  ],
+  "properties": {
+    "age": {
+      "type": "number",
+      "domain_min": 18,
+      "domain_max": 100,
+      "description": "Numerical attribute: Age"
+    },
+    "monthly_salary": {
+      "type": "number",
+      "domain_min": 0.0,
+      "domain_max": 10000000.0,
+      "description": "Numerical attribute: Monthly Salary"
+    },
+    "years_of_employment": {
+      "type": "number",
+      "domain_min": 0.0,
+      "domain_max": 80.0,
+      "description": "Numerical attribute: Years Of Employment"
+    },
+    "monthly_rent": {
+      "type": "number",
+      "domain_min": 0.0,
+      "domain_max": 1000000.0,
+      "description": "Numerical attribute: Monthly Rent"
+    },
+    "family_size": {
+      "type": "number",
+      "domain_min": 1,
+      "domain_max": 30,
+      "description": "Numerical attribute: Family Size"
+    },
+    "dependents": {
+      "type": "number",
+      "domain_min": 0,
+      "domain_max": 30,
+      "description": "Numerical attribute: Dependents"
+    },
+    "school_fees": {
+      "type": "number",
+      "domain_min": 0.0,
+      "domain_max": 1000000.0,
+      "description": "Numerical attribute: School Fees"
+    },
+    "college_fees": {
+      "type": "number",
+      "domain_min": 0.0,
+      "domain_max": 1000000.0,
+      "description": "Numerical attribute: College Fees"
+    },
+    "travel_expenses": {
+      "type": "number",
+      "domain_min": 0.0,
+      "domain_max": 500000.0,
+      "description": "Numerical attribute: Travel Expenses"
+    },
+    "groceries_utilities": {
+      "type": "number",
+      "domain_min": 0.0,
+      "domain_max": 1000000.0,
+      "description": "Numerical attribute: Groceries Utilities"
+    },
+    "other_monthly_expenses": {
+      "type": "number",
+      "domain_min": 0.0,
+      "domain_max": 1000000.0,
+      "description": "Numerical attribute: Other Monthly Expenses"
+    },
+    "current_emi_amount": {
+      "type": "number",
+      "domain_min": 0.0,
+      "domain_max": 5000000.0,
+      "description": "Numerical attribute: Current Emi Amount"
+    },
+    "credit_score": {
+      "type": "number",
+      "domain_min": 300.0,
+      "domain_max": 900.0,
+      "description": "Numerical attribute: Credit Score"
+    },
+    "bank_balance": {
+      "type": "number",
+      "domain_min": -100000.0,
+      "domain_max": 100000000.0,
+      "description": "Numerical attribute: Bank Balance"
+    },
+    "emergency_fund": {
+      "type": "number",
+      "domain_min": 0.0,
+      "domain_max": 100000000.0,
+      "description": "Numerical attribute: Emergency Fund"
+    },
+    "requested_amount": {
+      "type": "number",
+      "domain_min": 1000.0,
+      "domain_max": 100000000.0,
+      "description": "Numerical attribute: Requested Amount"
+    },
+    "requested_tenure": {
+      "type": "number",
+      "domain_min": 1,
+      "domain_max": 480,
+      "description": "Numerical attribute: Requested Tenure"
+    },
+    "education": {
+      "type": "string",
+      "allowed_values": [
+        "High School",
+        "Graduate",
+        "Post Graduate",
+        "Professional",
+        "Doctorate",
+        "Diploma"
+      ],
+      "description": "Categorical attribute: Education"
+    },
+    "employment_type": {
+      "type": "string",
+      "allowed_values": [
+        "Salaried",
+        "Self-Employed",
+        "Business",
+        "Private",
+        "Government",
+        "Freelancer"
+      ],
+      "description": "Categorical attribute: Employment Type"
+    },
+    "company_type": {
+      "type": "string",
+      "allowed_values": [
+        "MNC",
+        "Startup",
+        "Mid-size",
+        "Corporate",
+        "Public",
+        "Small Business",
+        "Government"
+      ],
+      "description": "Categorical attribute: Company Type"
+    },
+    "house_type": {
+      "type": "string",
+      "allowed_values": [
+        "Rented",
+        "Own",
+        "Mortgaged",
+        "Family",
+        "Company Provided"
+      ],
+      "description": "Categorical attribute: House Type"
+    },
+    "existing_loans": {
+      "type": "string",
+      "allowed_values": [
+        "Yes",
+        "No"
+      ],
+      "description": "Categorical attribute: Existing Loans"
+    },
+    "emi_scenario": {
+      "type": "string",
+      "allowed_values": [
+        "Personal Loan EMI",
+        "Home Loan EMI",
+        "Vehicle EMI",
+        "Education EMI",
+        "E-commerce Shopping EMI",
+        "Medical Emergency EMI",
+        "Business Equipment EMI"
+      ],
+      "description": "Categorical attribute: Emi Scenario"
+    }
+  }
+}
