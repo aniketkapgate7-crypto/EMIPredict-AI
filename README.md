@@ -10,6 +10,15 @@
 
 ---
 
+## Live Demo
+
+* 🚀 **Interactive Cloud Application**: [Launch EMIPredict AI](https://emipredict-ai-aniket.streamlit.app)
+* 💻 **Source Code Repository**: [GitHub Repository](https://github.com/aniketkapgate7-crypto/EMIPredict-AI)
+
+The platform is deployed and active on **Streamlit Community Cloud** running **Python 3.11** with the production entry point [`streamlit_app.py`](streamlit_app.py).
+
+---
+
 ## 1. Problem Statement & Business Context
 
 In consumer credit underwriting, retail banks and Non-Banking Financial Companies (NBFCs) face two fundamental risk-assessment challenges:
@@ -309,21 +318,29 @@ EMIPredict-AI/
 
 ---
 
-## 10. Streamlit Cloud Deployment Instructions
+## 10. Streamlit Community Cloud Deployment
 
-1. Push the repository to GitHub:
-   ```bash
-   git add .
-   git commit -m "feat: complete EMIPredict AI platform with trained models & reports"
-   git push origin main
-   ```
-2. Verify that `models/eligibility_pipeline.joblib` (~386 KB) and `models/max_emi_pipeline.joblib` (~125 KB) are committed (both are well under the 100 MB GitHub file limit).
-3. Log in to [Streamlit Community Cloud](https://share.streamlit.io/).
-4. Click **New app**, select your repository, branch (`main`), and set the main file path to:
-   ```text
-   streamlit_app.py
-   ```
-5. Click **Deploy**. The application will load cached models instantly without loading raw datasets or retraining on startup.
+The application is deployed on **Streamlit Community Cloud** with the following production topology:
+
+* 🌐 **Live Web Application**: [https://emipredict-ai-aniket.streamlit.app](https://emipredict-ai-aniket.streamlit.app/)
+* 📦 **Repository Source**: [https://github.com/aniketkapgate7-crypto/EMIPredict-AI](https://github.com/aniketkapgate7-crypto/EMIPredict-AI)
+* 🌿 **Active Branch**: `main`
+* 🚀 **Production Entry Point**: [`streamlit_app.py`](streamlit_app.py)
+* 🐍 **Runtime Environment**: Python 3.11
+
+### Cloud Architectural & Operational Disclosures
+
+1. **Lightweight Decoupled Inference**:
+   * Production models ([`models/eligibility_pipeline.joblib`](models/eligibility_pipeline.joblib) and [`models/max_emi_pipeline.joblib`](models/max_emi_pipeline.joblib)) are pre-trained and serialized with Scikit-Learn / XGBoost.
+   * Model binaries are cached in memory using Python module-level caching and `st.cache_resource`, ensuring instantaneous sub-100ms inference without training or loading the full 404,800-row raw dataset during deployment startup.
+
+2. **Static MLflow Summaries**:
+   * The deployed application reads pre-computed experiment tracking benchmarks from [`reports/mlflow_run_summary.csv`](reports/mlflow_run_summary.csv) and [`models/model_metadata.json`](models/model_metadata.json).
+   * It operates fully independently without requiring an active MLflow server daemon in the cloud container.
+
+3. **Database Persistence & Ephemeral Storage**:
+   * **Default Local SQLite**: Applications saved on Streamlit Cloud use local SQLite storage (`database/applicants.db`) by default. Because Streamlit Community Cloud containers run on ephemeral filesystems, records saved to the local SQLite database are temporary and will reset whenever the cloud container restarts or re-deploys.
+   * **Persistent Enterprise PostgreSQL**: For durable, multi-session cloud persistence, configure the `DATABASE_URL` secret in the Streamlit Cloud dashboard settings (e.g. `postgresql://user:password@host:5432/dbname`). The SQLAlchemy layer automatically switches to PostgreSQL when a PostgreSQL connection string is supplied.
 
 ---
 
